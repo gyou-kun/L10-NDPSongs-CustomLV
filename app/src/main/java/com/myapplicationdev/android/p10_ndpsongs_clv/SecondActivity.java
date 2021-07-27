@@ -35,8 +35,11 @@ public class SecondActivity extends AppCompatActivity {
         songList = dbh.getAllSongs();
         dbh.close();
 
-		adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, songList);
-		lv.setAdapter(adapter);
+		//adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, songList);
+		//lv.setAdapter(adapter);
+        adapter = new CustomAdapter(this, R.layout.row, alAndroidVersions);
+        lv.setAdapter(adapter);
+
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
